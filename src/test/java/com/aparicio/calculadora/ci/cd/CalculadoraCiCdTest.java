@@ -84,5 +84,19 @@ public class CalculadoraCiCdTest {
          assertTrue(exception.getMessage().contains("No se puede dividir por cero"));
     }
     
+    @Test
+    public void testPotenciaUno(){
+        int resultado = calculadora.potencia(7, 1);
+        assertEquals(7, resultado, "7^1 debe ser 7");
+    }
     
+    @Test
+    public void testPotenciaNegativa(){
+        Exception exception = assertThrows(
+        IllegalArgumentException.class,
+        () -> calculadora.potencia(2, -3),
+        "Potencia negativa debe lanzar IllegalArgumentException"
+        );
+        assertTrue(exception.getMessage().contains("Exponente debe ser positivo"));
+    }
 }
