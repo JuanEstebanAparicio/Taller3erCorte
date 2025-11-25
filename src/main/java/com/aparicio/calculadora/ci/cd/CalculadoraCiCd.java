@@ -39,8 +39,18 @@ public class CalculadoraCiCd {
       }
        return resultado;
   }
-    
+  
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        CalculadoraCiCd calc = new CalculadoraCiCd();
+        
+        System.out.println("CACULADORA CI/CD");
+        System.out.println("5 + 3 = " + calc.sumar(5,3));
+        System.out.println("10 - 4 = " + calc.restar(10, 4));
+        System.out.println("6 * 7 = " + calc.multiplicar(6, 7));
+        System.out.println("20 / 4 = " + calc.dividir(20, 4));
+        System.out.println("2^3 = " + calc.potencia(2, 3));
+        System.out.println("YYY ESO ES TODO :)");
+        
+        
     }
 }

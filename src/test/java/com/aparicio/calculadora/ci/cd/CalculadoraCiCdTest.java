@@ -26,13 +26,13 @@ public class CalculadoraCiCdTest {
     public void setUp() throws Exception {
         calculadora = new CalculadoraCiCd();
     }
+    @Test
+    public void testSumar(){
+        int resultado = calculadora.sumar(5, 3);
+        assertEquals(8, resultado, "5 + 3 debe ser 8");
+    }
     
-    
-
-    /**
-     * Test of main method, of class CalculadoraCiCd.
-     */
-    @org.junit.jupiter.api.Test
+    @Test
     public void testMain() {
         System.out.println("main");
         String[] args = null;
