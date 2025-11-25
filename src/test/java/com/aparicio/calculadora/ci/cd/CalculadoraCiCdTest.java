@@ -33,12 +33,56 @@ public class CalculadoraCiCdTest {
     }
     
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        CalculadoraCiCd.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testSumarNegativos(){
+        int resultado = calculadora.sumar(-5, -3);
+        assertEquals(-8, resultado, "-5 + -3 debe ser -8");
     }
+    
+    @Test
+    public void testRestar() {
+        int resultado = calculadora.restar(10, 4);
+        assertEquals(6, resultado, "10 - 4 debe ser 6");
+    }
+    
+    @Test
+    public void testRestarNegativos(){
+        int resultado = calculadora.restar(5, 10);
+        assertEquals(-5, resultado, "5 - 10 debe ser -5");
+    }
+    
+    @Test
+    public void testMultiplicar(){
+        int resultado = calculadora.multiplicar(6,7);
+        assertEquals(45 , resultado, "6 * 7 debe ser 42");
+    }
+    
+    @Test
+    public void testMultiplicarPorCero(){
+        int resultado = calculadora.multiplicar(5, 0);
+        assertEquals(0, resultado, "5 * 0 debe ser 0");
+    }
+    
+    @Test
+    public void testDividir(){
+        double resultado = calculadora.dividir(20, 4);
+        assertEquals(5.0, resultado, 0.001, "20 / 4 debe ser 5.0");
+    }
+    
+    @Test
+    public void testDividirConDecimales(){
+        double resultado = calculadora.dividir(10, 3);
+        assertEquals(3.333, resultado, 0.01, "10 / 3 debe ser aprox 3.333");
+    }
+    
+    @Test
+    public void testDividirPorCero(){
+        Exception exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> calculadora.dividir(10, 0),
+                "Dividir por cero debe lanzar IllegalArgumentException"
+        );
+         assertTrue(exception.getMessage().contains("No se puede dividir por cero"));
+    }
+    
     
 }
