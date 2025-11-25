@@ -17,24 +17,16 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class CalculadoraCiCdTest {
     
+    private CalculadoraCiCd calculadora;
+    
     public CalculadoraCiCdTest() {
     }
 
-    @org.junit.jupiter.api.BeforeAll
-    public static void setUpClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.AfterAll
-    public static void tearDownClass() throws Exception {
-    }
-
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     public void setUp() throws Exception {
+        calculadora = new CalculadoraCiCd();
     }
-
-    @org.junit.jupiter.api.AfterEach
-    public void tearDown() throws Exception {
-    }
+    
     
 
     /**
