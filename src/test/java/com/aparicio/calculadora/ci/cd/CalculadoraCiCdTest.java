@@ -53,7 +53,7 @@ public class CalculadoraCiCdTest {
     @Test
     public void testMultiplicar(){
         int resultado = calculadora.multiplicar(6,7);
-        assertEquals(45 , resultado, "6 * 7 debe ser 42");
+        assertEquals(42 , resultado, "6 * 7 debe ser 42");
     }
     
     @Test
